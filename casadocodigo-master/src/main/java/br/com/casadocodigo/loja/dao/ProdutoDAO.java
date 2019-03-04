@@ -1,6 +1,7 @@
 package br.com.casadocodigo.loja.dao;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -40,5 +41,11 @@ public class ProdutoDAO {
 	    		+ "where preco.tipo = :tipoPreco", BigDecimal.class);
 	    query.setParameter("tipoPreco", tipoPreco);
 	    return query.getSingleResult();
+	}
+
+	public List<Produto> listarPorDataLancamento(Calendar data) {
+		return manager.createQuery("select distinct(p) from Produto p join fetch p.precos where p.dataLancamento >= :data", Produto.class)
+				.setParameter("data", data)
+				.getResultList();
 	}
 }
