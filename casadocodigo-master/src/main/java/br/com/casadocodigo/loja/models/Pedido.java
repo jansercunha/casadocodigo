@@ -57,5 +57,15 @@ public class Pedido implements Serializable {
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	
+	public String getTitulos() {
+		String retorno = "";
+		for (Produto produto : produtos) {
+			if (retorno.length() != 0) retorno += ", ";
+			retorno += produto.getTitulo();
+		}
+		
+		return retorno;
+	}
 
 }
