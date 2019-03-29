@@ -7,31 +7,28 @@
 
 <c:url value="/" var="contextPath" />
 
-<tags:pageTemplate titulo="${pedido.titulo }">
+<tags:pageTemplate titulo="Pedidos">
 	<jsp:body>
 	<div class="container">
-		<h1>Lista de Pedidos</h1>
-<%-- 		<p> ${sucesso} </p> --%>
-<%-- 		<p> ${falha} </p> --%>
+		<h1><fmt:message key="pedido.titulo"/></h1>
 	
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
-				<th>ID</th>
-				<th>Valor</th>
-				<th>Data pedido</th> 
-				<th>Título do produto</th>
+				<th><fmt:message key="pedido.id"/></th>
+				<th><fmt:message key="pedido.valor"/></th>
+				<th><fmt:message key="pedido.data"/></th> 
+				<th><fmt:message key="pedido.titulos"/></th>
 			</tr>
-			<c:forEach items="${produtos }" var="produto">
+			<c:forEach items="${pedidos}" var="pedido">
 				<tr>
-					<td><a
-							href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build() }">${produto.titulo }</a> </td>
-					<td>${produto.descricao }</td>
-					<td>${produto.precos }</td>
-					<td>${produto.paginas }</td>
+					<td>${pedido.id}</td>
+					<td align="right" ><fmt:formatNumber value="${pedido.valor}" type="currency" currencySymbol="" />  </td>
+					<td><fmt:formatDate value="${pedido.data.time}" pattern="dd/MM/yyyy"/></td>
+					<td>${pedido.titulos} </td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
-	
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	</jsp:body>
 </tags:pageTemplate>
