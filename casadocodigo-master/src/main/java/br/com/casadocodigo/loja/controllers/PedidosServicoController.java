@@ -32,7 +32,7 @@ public class PedidosServicoController {
 		
 		List<Pedido> pedidos = Arrays.asList(restTemplate.getForObject(uri, Pedido[].class));
 				
-		ModelAndView modelAndView = new ModelAndView("pedidos/lista");
+		ModelAndView modelAndView = new ModelAndView("pedidos/pedidos");
 		modelAndView.addObject("pedidos", pedidos);
 		return modelAndView;
 	}
