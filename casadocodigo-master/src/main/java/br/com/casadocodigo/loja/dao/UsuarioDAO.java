@@ -32,4 +32,10 @@ public class UsuarioDAO implements UserDetailsService{
 	public void gravar(Usuario usuario) {
 		manager.persist(usuario);
 	}
+
+	public List<Usuario> listar() {
+		return manager
+				.createQuery("select u from Usuario order by nome", Usuario.class)
+				.getResultList();
+	}
 }
