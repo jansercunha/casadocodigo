@@ -10,22 +10,21 @@
 <tags:pageTemplate titulo="Usuarios">
 	<jsp:body>
 	<div class="container">
+		<br/>
+		<a href="${s:mvcUrl('UC#form').build() }" rel="nofollow"><fmt:message key="usuario.novo"/></a>
+	
 		<h1><fmt:message key="usuario.titulo"/></h1>
 	
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
-<%-- 				<th><fmt:message key="pedido.id"/></th> --%>
-<%-- 				<th><fmt:message key="pedido.valor"/></th> --%>
-<%-- 				<th><fmt:message key="pedido.data"/></th>  --%>
-<%-- 				<th><fmt:message key="pedido.titulos"/></th> --%>
+				<th><fmt:message key="usuario.nome"/></th>
+				<th><fmt:message key="usuario.email"/></th>
 			</tr>
 			<c:forEach items="${usuarios}" var="usuario">
-<!-- 				<tr> -->
-<%-- 					<td>${pedido.id}</td> --%>
-<%-- 					<td align="right" ><fmt:formatNumber value="${pedido.valor}" type="currency" currencySymbol="" />  </td> --%>
-<%-- 					<td><fmt:formatDate value="${pedido.data.time}" pattern="dd/MM/yyyy"/></td> --%>
-<%-- 					<td>${pedido.titulos} </td> --%>
-<!-- 				</tr> -->
+				<tr>
+					<td>${usuario.nome}</td>
+					<td>${usuario.email}</td>
+				</tr>
 			</c:forEach>
 		</table>
 	</div>
