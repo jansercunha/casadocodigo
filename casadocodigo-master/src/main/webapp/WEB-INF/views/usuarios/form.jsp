@@ -12,6 +12,7 @@
 <tags:pageTemplate titulo="Usuarios">
 	<jsp:body>
 	<div class="container">
+		<h1><fmt:message key="usuario.cadastro"/></h1>
 		<form:form action="${s:mvcUrl('UC#gravar').build() }" method="post" commandName="usuario" enctype="multipart/form-data">
 			<div class="form-group">
 				<label><fmt:message key="usuario.nome"/></label>

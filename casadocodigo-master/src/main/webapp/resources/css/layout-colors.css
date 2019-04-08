@@ -23,6 +23,9 @@ html {
 #main-nav ul li:hover {
   border-bottom: 7px solid #EF7000;
 }
+#main-nav ul li {
+  border-bottom: 7px solid #000;
+}
 #main-nav ul li a:link,
 #main-nav ul li a:visited {
   color: #F5F5F5;

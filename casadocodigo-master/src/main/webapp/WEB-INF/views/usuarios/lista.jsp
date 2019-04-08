@@ -13,6 +13,7 @@
 		<br/>
 		<a href="${s:mvcUrl('UC#form').build() }" rel="nofollow"><fmt:message key="usuario.novo"/></a>
 	
+		<br/>
 		<h1><fmt:message key="usuario.titulo"/></h1>
 	
 		<table class="table table-bordered table-striped table-hover">

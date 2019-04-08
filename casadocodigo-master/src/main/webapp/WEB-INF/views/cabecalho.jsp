@@ -11,10 +11,11 @@
 			<a href="${contextPath}" id="logo"> </a>
 			<div id="header-content">
 				<nav id="main-nav" >
-					<ul class="nav navbar-nav navbar-left">
+					<ul>
 					<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li><a href="${s:mvcUrl('PC#listar').build() }" rel="nofollow"><fmt:message key="menu.lista_produtos"/></a></li>
 						<li><a href="${s:mvcUrl('PSC#listar').build() }" rel="nofollow"><fmt:message key="menu.lista_pedidos"/></a></li>
+						<li><a href="${s:mvcUrl('UC#listar').build() }" rel="nofollow"><fmt:message key="menu.lista_usuarios"/></a></li>
 						<li><a href="${s:mvcUrl('PC#form').build() }" rel="nofollow"><fmt:message key="menu.cadastro_produtos"/></a></li>
 					</security:authorize>
 						<li>
