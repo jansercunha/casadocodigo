@@ -22,12 +22,16 @@
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
 				<th><fmt:message key="usuario.nome"/></th>
-				<th><fmt:message key="usuario.email"/></th>
+				<th><fmt:message key="usuario.email"/></th> 
+				<th><fmt:message key="usuario.role"/></th> 
+				<th></th> 
 			</tr>
 			<c:forEach items="${usuarios}" var="usuario">
 				<tr>
 					<td>${usuario.nome}</td>
 					<td>${usuario.email}</td>
+					<td>${usuario.roles}</td>
+					<td align="center"><a href=""><img alt="Adicionar" src="${contextPath}resources/imagens/adicionar.png"></a></td>
 				</tr>
 			</c:forEach>
 		</table>

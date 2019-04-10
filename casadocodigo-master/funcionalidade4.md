@@ -5,7 +5,7 @@ Você deve criar um novo formulário para alterar os roles e, ao atualizar a apl
 Obs: Ao executar a "URL Mágica" já são cadastrados 3 roles: ROLE_ADMIN, ROLE_USER e ROLE_COMERCIAL*.
 
 Views
-A tabela de usuários deve ganhar mais duas colunas para mostrar as roles do usuário e outra para mostrar um botão de edição:
+[OK] A tabela de usuários deve ganhar mais duas colunas para mostrar as roles do usuário e outra para mostrar um botão de edição:
 
 [Imagem] compressed_listar_usuarios_com_roles1.png
 
