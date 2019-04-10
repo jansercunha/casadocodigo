@@ -24,12 +24,16 @@ O design do formulário e listagem não é importante na avaliação, o que impo
 Todos os campos do formulário são obrigatórios. Além disso, a senha deve ter no mínimo 5 caracteres e deve ser idêntica à senha repetida. Também deve ser validado se já existe um usuário com mesmo e-mail cadastrado.
 
 ##Fluxo
-Após cadastrar com sucesso, o fluxo deve ser redirecionado para a listagem dos usuários. Em caso de erros de validação devemos ficar na página com o formulário. Na listagem dos usuários deve ter um link "Novo usuário" para ir para o formulário. A URL para chamar a listagem dos usuários deve se chamar /usuários.
+Após cadastrar com sucesso, o fluxo deve ser redirecionado para a listagem dos usuários. Em caso de erros de validação devemos ficar na página com o formulário.
+
+Na listagem dos usuários deve ter um link "Novo usuário" para ir para o formulário. A URL para chamar a listagem dos usuários deve se chamar /usuários.
 
 ##Detalhes das Views
 Você deve implementar as views para o formulário e a listagem dos usuários, sempre usando o template já existente no projeto.
 
-Os erros de validação devem ser apresentados no formulário. Ao cadastrar o novo usuário deve aparecer uma mensagem de sucesso também.
+Os erros de validação devem ser apresentados no formulário.
+
+Ao cadastrar o novo usuário deve aparecer uma mensagem de sucesso também.
 
 No menu deve aparecer um link para acessar a listagem de usuários e ela possui um link para chegar no formulário como apresentado nas imagens acima. O texto do link deve ser colocado no menu.properties (EN,PT).
 

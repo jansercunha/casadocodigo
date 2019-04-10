@@ -13,30 +13,30 @@
 	<jsp:body>
 	<div class="container">
 		<h1><fmt:message key="usuario.cadastro"/></h1>
-		<form:form action="${s:mvcUrl('UC#gravar').build() }" method="post" commandName="usuario" enctype="multipart/form-data">
+		<form:form action="${s:mvcUrl('UC#gravar').build() }" method="post" commandName="usuario" enctype="multipart/form-data" >
 			<div class="form-group">
 				<label><fmt:message key="usuario.nome"/></label>
-				<form:input path="nome" cssClass="form-control" />
+				<form:input path="nome" cssClass="form-control" style="width: 100%"/>
 				<form:errors path="nome" />
 			</div>
 			<div class="form-group">
 		        <label><fmt:message key="usuario.email"/></label>
-				<form:textarea path="email" cssClass="form-control" />
+				<form:input path="email" cssClass="form-control" style="width: 100%"/>
 		        <form:errors path="email" />
 			</div>
 			<div class="form-group">
 		        <label><fmt:message key="usuario.senha"/></label>
-				<form:textarea path="senha" cssClass="form-control" />
+				<form:password path="senha" cssClass="form-control" />
 				<form:errors path="senha" />
 			</div>
 			<div class="form-group">
 		        <label><fmt:message key="usuario.repetirsenha"/></label>
-				<form:textarea path="repetirSenha" cssClass="form-control" />
+				<form:password path="repetirSenha" cssClass="form-control" />
 		        <form:errors path="repetirSenha" />
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form:form>
 	</div>
-	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/>
 	</jsp:body>
 </tags:pageTemplate>

@@ -9,6 +9,9 @@
 
 <tags:pageTemplate titulo="Usuarios">
 	<jsp:body>
+	<c:if test="${not empty message }">
+		<h1 class="cdc-call">${message }</h1>
+	</c:if>
 	<div class="container">
 		<br/>
 		<a href="${s:mvcUrl('UC#form').build() }" rel="nofollow"><fmt:message key="usuario.novo"/></a>

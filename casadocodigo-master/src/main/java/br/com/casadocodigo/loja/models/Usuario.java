@@ -24,6 +24,8 @@ public class Usuario implements UserDetails {
 	private String email;
 	private String senha;
 	private String nome;
+	
+	@Transient
 	private String repetirSenha;
 
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -56,7 +58,7 @@ public class Usuario implements UserDetails {
 		this.nome = nome;
 	}
 	
-	@Transient
+	
 	public String getRepetirSenha() {
 		return repetirSenha;
 	}

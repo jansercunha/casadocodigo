@@ -5,8 +5,11 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.casadocodigo.loja.dao.UsuarioDAO;
 import br.com.casadocodigo.loja.models.Usuario;
+import br.com.casadocodigo.loja.validation.UsuarioValidation;
 
 @Controller
 @RequestMapping("/usuarios")
@@ -21,6 +25,11 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioDAO dao;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.addValidators(new UsuarioValidation(dao));
+	}
 	
 	@RequestMapping(value="/form", method=RequestMethod.GET)
 	public ModelAndView form(Usuario usuario) {
@@ -43,6 +52,9 @@ public class UsuarioController {
 		if(result.hasErrors()) {
 			return form(usuario);
 		}
+		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		usuario.setSenha(encoder.encode(usuario.getSenha()));
 		
 		dao.gravar(usuario);
 		
