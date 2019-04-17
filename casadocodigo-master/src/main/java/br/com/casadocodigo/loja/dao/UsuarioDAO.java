@@ -34,10 +34,14 @@ public class UsuarioDAO implements UserDetailsService{
 	public void gravar(Usuario usuario) {
 		manager.persist(usuario);
 	}
+	
+	public void update(Usuario usuario) {
+		manager.merge(usuario);
+	}
 
 	public List<Usuario> listar() {
 		return manager
-				.createQuery("select u from Usuario u order by u.nome", Usuario.class)
+				.createQuery("select distinct(u) from Usuario u left join fetch u.roles order by u.nome", Usuario.class)
 				.getResultList();
 	}
 }

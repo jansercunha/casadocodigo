@@ -12,27 +12,13 @@
 <tags:pageTemplate titulo="Roles">
 	<jsp:body>
 	<div class="container">
-		<h1><fmt:message key="role.cadastro"/> ${usuario.nome}</h1>
-		<form:form action="${s:mvcUrl('UC#gravar').build() }" method="post" commandName="usuario" enctype="multipart/form-data" >
+		<form:form action="${s:mvcUrl('RC#alterarPermissoes').build() }" method="post" enctype="multipart/form-data" modelAttribute="usuario">
+			<h1><fmt:message key="role.cadastro"/> ${usuario.nome}</h1>
 			<div class="form-group">
-				<label><fmt:message key="role.roles"/></label>
-				<form:checkboxes items="${roles}" path="rolesList"/>
+				<label><fmt:message key="role.roles"/>:</label><br/>
+				<form:checkboxes items="${listaRoles}" path="roles" itemValue="nome" cssClass="form-check-input" delimiter="<br/>" />
+				<input type="hidden" name="email" value="${usuario.email}"/>
 			</div>
-<!-- 			<div class="form-group"> -->
-<%-- 		        <label><fmt:message key="usuario.email"/></label> --%>
-<%-- 				<form:input path="email" cssClass="form-control" style="width: 100%"/> --%>
-<%-- 		        <form:errors path="email" /> --%>
-<!-- 			</div> -->
-<!-- 			<div class="form-group"> -->
-<%-- 		        <label><fmt:message key="usuario.senha"/></label> --%>
-<%-- 				<form:password path="senha" cssClass="form-control" /> --%>
-<%-- 				<form:errors path="senha" /> --%>
-<!-- 			</div> -->
-<!-- 			<div class="form-group"> -->
-<%-- 		        <label><fmt:message key="usuario.repetirsenha"/></label> --%>
-<%-- 				<form:password path="repetirSenha" cssClass="form-control" /> --%>
-<%-- 		        <form:errors path="repetirSenha" /> --%>
-<!-- 			</div> -->
 			<button type="submit" class="btn btn-primary">Atualizar</button>
 		</form:form>
 	</div>

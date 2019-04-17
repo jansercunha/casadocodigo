@@ -32,7 +32,7 @@
 					<td>${usuario.email}</td>
 					<td>${usuario.roles}</td>
 					<td align="center">
-						<form:form action="${s:mvcUrl('RC#detalhe').build() }" method="POST">
+						<form:form action="${s:mvcUrl('RC#detalhe').build() }" method="POST" modelAttribute="usuario">
 							<input type="hidden" name="email" value="${usuario.email}"/>
 							<input type="image" src="${contextPath }resources/imagens/adicionar.png" alt="Adicionar"/>
 						</form:form>

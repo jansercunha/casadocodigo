@@ -9,13 +9,13 @@ Views
 
 [Imagem] compressed_listar_usuarios_com_roles1.png
 
-O formulário para alterar os roles mostra todos os roles cadastrados no banco. Para cada role deve existir uma checkbox:
+[OK] O formulário para alterar os roles mostra todos os roles cadastrados no banco. Para cada role deve existir uma checkbox:
 
 [Imagem] compressed_form_roles.png
 
-Repare também que o título mostra o nome do usuário.
+[OK] Repare também que o título mostra o nome do usuário.
 
-Após a alteração, é preciso voltar para a listagem com uma mensagem de sucesso:
+[OK] Após a alteração, é preciso voltar para a listagem com uma mensagem de sucesso:
 
 [Imagem] compressed_listar_usuarios_com_roles.png
 
