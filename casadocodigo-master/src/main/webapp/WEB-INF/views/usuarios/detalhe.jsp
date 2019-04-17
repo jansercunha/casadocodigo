@@ -12,7 +12,7 @@
 <tags:pageTemplate titulo="Roles">
 	<jsp:body>
 	<div class="container">
-		<form:form action="${s:mvcUrl('RC#alterarPermissoes').build() }" method="post" enctype="multipart/form-data" modelAttribute="usuario">
+		<form:form action="${s:mvcUrl('UC#alterarPermissoes').build() }" method="post" enctype="multipart/form-data" modelAttribute="usuario">
 			<h1><fmt:message key="role.cadastro"/> ${usuario.nome}</h1>
 			<div class="form-group">
 				<label><fmt:message key="role.roles"/>:</label><br/>
