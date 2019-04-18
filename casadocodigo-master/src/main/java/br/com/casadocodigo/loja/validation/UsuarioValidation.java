@@ -33,8 +33,7 @@ public class UsuarioValidation implements Validator {
 		if (!usuario.getSenha().equals(usuario.getRepetirSenha()))	errors.rejectValue("repetirSenha", "field.password.repeat");
 		
 		try {
-			Usuario usuario2 = usuarioDAO.loadUserByUsername(usuario.getEmail());
-			System.out.println(usuario2);
+			usuarioDAO.loadUserByUsername(usuario.getEmail());
 			errors.rejectValue("email", "field.email.exists");
 		} catch (Exception e) {
 		}
